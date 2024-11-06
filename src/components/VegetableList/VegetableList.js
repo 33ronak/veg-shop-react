@@ -2,8 +2,6 @@ import React, { useRef, useState } from "react";
 
 const VegetableList = ({ items = [], onBuyItem, onRemoveItem }) => {
 
-    console.log(items)
-
     const [initialQty, setQty] = useState(0);
     const ref = useRef();
 
@@ -25,14 +23,12 @@ const VegetableList = ({ items = [], onBuyItem, onRemoveItem }) => {
                             <span>
                                 <input type="number" ref={(r) => {
                                     ref.current = r
-                                }}></input>
+                                }}
+                                />
                                 <button onClick={() => onBuyItem(id, ref.current.value)}> Buy </button>
                                 <button onClick={() => onRemoveItem(id)}> Delete </button>
-
                             </span>
                         </p>
-
-
                     </div>
                 )
             })
